@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        // Functions
+        function multiply(x, y){
+            return x * y;
+        }
+        const nums = [2, 3];
+        multiply(...nums);
+        
+        const num = [3];
+        multiply(2, ...num);
+
+        // Arrays
+        const versions = ['es5','es6'];
+        const list = ['es3', ...versions, 'es7', 'es8'];
+
+        const copy = [...list];
+        
+        const concat = [...list,...copy];
+
+        // Objects
+        const obj = {name: 'Alberto', job: 'Full Stack Developer'};
+        const version = { ecmascript: 2015, short: 'ES6' };
+
+        const clone = {...obj};
+        const merge = {...obj, ...version};
+
+        //const objToArrayIfYouCan = [...obj];
+    </script>
+</body>
+</html>

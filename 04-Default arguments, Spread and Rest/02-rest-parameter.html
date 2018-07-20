@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        function sumES5(msg){
+            const nums = Array.prototype.slice.call(arguments).slice(1);
+    
+            const total = nums.reduce(
+                function(p,c){
+                    return p + c; 
+                }
+            );
+
+            return msg + ' ' + total;
+        }
+
+        const sumES6 = (msg, ...nums) => {
+
+            const total = nums.reduce((p,c) => p + c);
+
+            return msg + ' ' + total;
+        }
+    </script>
+</body>
+</html>

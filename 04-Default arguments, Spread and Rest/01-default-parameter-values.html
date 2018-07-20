@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Default Parameter Values</title>
+</head>
+<body>
+    <script>
+        function helloOld(msg, name){
+            msg = (typeof msg !== 'undefined') ?  msg : 'Hello';
+            name = (typeof name !== 'undefined') ?  name : 'World';
+
+            // if(arguments.length == 2){
+            //     console.log(msg,name);
+            // }
+        }
+
+        const helloNew = (msg = 'Hello', name = 'World') => {
+            console.log(msg,name);
+        }
+    </script>
+
+</body>
+</html>

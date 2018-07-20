@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Computed Propery Names</title>
+</head>
+<body>
+    <script>
+        // Strings
+        const text = 'prop_1';
+        
+        const obj = {
+            [text]: "Ciao",
+            ["prop" + "_2"]: "Mondo"
+        }
+
+        // Operations
+        let i = 0;
+        const count = {
+            ['count_' + ++i]: i,
+            ['count_' + ++i]: i,
+            ['count_' + ++i]: i
+        }
+        
+        // Functions
+        function hello(){
+            return 'prop_2';
+        }
+
+        const objHello = {
+            prop_1: "Ciao",
+            [hello()]: "Mondo"
+        }
+    </script>
+</body>
+</html>

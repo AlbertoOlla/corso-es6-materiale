@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        // Arrays
+        const technologies = ['mongo', 'express', 'angular', 'node'];
+
+        const dbTech = technologies[0], frontTech = technologies[2];
+
+        const [db, ,frontend] = technologies;
+
+        // Objects
+        const style = {border: '1px solid red', padding: '15px', margin: '5px'};
+
+        const {border: b, margin: m} = style;
+        const {border, margin} = style;
+
+        // Functions
+        function destructArr([name, psw]){
+            return name+' '+psw;
+        }
+
+        function destructObj({name: n, psw: p}){
+            return n+' '+p;
+        }
+
+        function destructObjShort({name, psw}){
+            return name+' '+psw;
+        }
+
+        // Fail-soft
+        const [isUndefined] = [];
+        const [notUndefined = 1] = [];
+
+        const {name: n='Logan'} = {name: 'James', surname: 'Howlett'};
+
+        function destructFailSoft([name = 'Al', psw]){
+            return name+' '+psw;
+        }
+
+        // Rest/Spread
+        const [one, two, ...nums] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        const {a, e, ...rest} = {a: 1, b: 2, c: 3, d: 4, e: 5};
+    </script>
+</body>
+</html>

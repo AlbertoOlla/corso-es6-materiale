@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Methods Properties</title>
+</head>
+<body>
+    <script>
+        function createPerson(name, age){
+            return { 
+                type: 'person',
+                name,
+                age,
+                printPerson(){
+                    console.log(`${this.name} è una persona di ${this.age} anni.`);
+                },
+                doubleAge(){
+                    return this.age *2;
+                },
+                getNameUppercase(){
+                    return this.name.toUpperCase();
+                }
+            };
+        }
+
+        const al = createPerson('Alberto',27);
+    </script>
+</body>
+</html>

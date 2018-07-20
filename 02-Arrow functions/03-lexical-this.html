@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lexical This</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name : 'Alberto',
+            skills : ['javascript','node.js','mongodb','come cucinare'],
+            printSkills(){
+                this.skills.forEach(s => {
+                    console.log(this.name + ' conosce '+ s);
+                });
+            }
+        }
+
+        user.printSkills();
+
+        function printArgs(){
+            console.log(arguments);
+        }
+
+        const printArgsIfYouCan = () => console.log(arguments);
+    </script>
+</body>
+</html>

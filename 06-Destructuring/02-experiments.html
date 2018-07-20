@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring Experiments</title>
+</head>
+<body>
+    <script>
+        // Deep Matching
+        const address = {
+            name: 'Professor Charles Francis Xavier',
+            location: {
+                city: "Seattle",
+                region: "WA",
+                postalCode: "98052",
+                street: "20341 Whitworth Institute 405 N. Whitworth"
+            }
+        };
+
+        const {location: {city}, location: {street: s}} = address;
+
+        // Mixed
+        const arrObj = [
+            {value: "a"},
+            {value: "b"}
+        ];
+
+        const [{value: valOfA}, {value: valOfB}] = arrObj;
+
+        const array = ['a','b','c','d'];
+        const obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+
+        const {0: alpha, 3:delta} = array;
+        // const [one, two] = obj;
+
+        const [firstLetter, ...theOthers] = 'Alberto';
+
+        // Definition
+        let a,e;
+        [a] = array;
+        ({e} = obj);
+
+        let data = {};
+        [data.alpha, , , data.delta] = array;
+
+        let dataObj = {};
+        ({ a: dataObj.alpha, d: dataObj.delta} = obj);
+
+        // Loop
+        const people = [
+            {
+                name: 'Anakin Skywalker',
+                family: {
+                    mother: 'Shmi Skywalker',
+                    father: 'The Force',
+                },
+            },
+            {
+                name: 'Padme Amidala',
+                family: {
+                    mother: 'Jobal Nebarre',
+                    father: 'Ruwee Nabarre',
+                },
+            }
+        ];
+
+        // for (const {name: n, family: {father: f}} of people) {
+        //     console.log(`Name: ${n}, Father: ${f}`);
+        // }
+    </script>
+</body>
+</html>

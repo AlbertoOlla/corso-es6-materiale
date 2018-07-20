@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Literals (Template Strings)</title>
+</head>
+<body>
+    <script>
+        // Win: ALT + 96
+        // LINUX : ALT GR + '
+        // MAC : ALT + 9
+
+        const name = 'Alberto';
+        const product = {
+            id : '10001',
+            name : 'T-shirt',
+            price : 10,
+            quantity : 2,
+            color : 'rosso',
+            tag: ['promozione','estate','nike']
+        };
+
+        const newMessage = `Ciao ${name}
+Vuoi comprare ${product.quantity} ${product.name} per
+un totale di ${product.quantity * product.price} euro?`;
+
+
+        // Nested, Loops, Functions
+        function printTags(tags){
+            return tags.map( t => `<li>${t}</li>` ).join('');
+        }
+
+        const detail = `
+        <h2 class="name">${product.name}</h2>
+        <h3 class="color">${product.color ? `(Colore: ${product.color})` : '' }</h3>
+        <p class="price">${product.price}</p>
+        <ul>
+            ${printTags(product.tag)}
+        </ul>`;
+
+        document.body.innerHTML = detail;
+    </script>
+</body>
+</html>
